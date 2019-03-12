@@ -49,7 +49,7 @@ wd="$(pwd)"
 cd "$tmp"
 
 7z x -tzip "$wd/$tbb_path/browser/omni.ja"
-sed '/extensions\.torlauncher\/.d' -i defaults/preferences/000-tor-browser.js
+sed '/extensions\.torlauncher\./d' -i defaults/preferences/000-tor-browser.js
 cat "$wd/tor-browser-prefs.js" >> defaults/preferences/000-tor-browser.js
 rm "$wd/$tbb_path/browser/omni.ja"
 7z a -mtc=off -tzip "$wd/$tbb_path/browser/omni.ja" *
