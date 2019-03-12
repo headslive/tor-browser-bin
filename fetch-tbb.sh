@@ -31,5 +31,7 @@ tbb_sig="https://www.torproject.org/dist/torbrowser/$1/tor-browser-linux${aa}-$1
 wget -c "${tbb_tar}" || die "Failed fetching $(basename "${tbb_tar}")"
 wget -c "${tbb_sig}" || die "Failed fetching $(basename "${tbb_sig}")"
 
-gpg --no-default-keyring --keyring=./tor-keyring.gpg \
-	--verify "$(basename "${tbb_sig}")" || die "Failed verifying signature"
+gpgv --keyring ./tor-keyring.gpg "$(basename "${tbb_sig}")" "$(basename "${tbb_tar}")"
+[ $? = 0 ] || die "Failed verifying signature"
+
+exit 0

@@ -8,7 +8,7 @@ Build-Depends:
 	p7zip-full,
 	xz-utils,
 	wget,
-	gnupg
+	gpgv
 Homepage: https://www.torproject.org/projects/torbrowser.html.en
 Vcs-Browser: https://github.com/headslive/tor-browser-bin
 Vcs-Git: https://github.com/headslive/tor-browser-bin.git
