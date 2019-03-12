@@ -13,9 +13,9 @@ build:
 	./fetch-tbb.sh $(DEB_UPSTREAM_VERSION) $(DEB_HOST_ARCH)
 	./prep-files.sh $(DEB_UPSTREAM_VERSION) $(DEB_HOST_ARCH)
 	mkdir -p $(pkgdir)/usr/lib $(pkgdir)/usr/bin $(pkgdir)/etc/tor-browser
-	cp -r tor-browser_en-US/Browser $(pkgdir)/usr/lib/tor-browser
-	mv $(pkgdir)/usr/lib/tor-browser/TorBrowser/Data/Browser/profile.default \
+	mv tor-browser_en-US/Browser/TorBrowser/Data/Browser/profile.default \
 		$(pkgdir)/etc/tor-browser/profile
+	cp -r tor-browser_en-US/Browser $(pkgdir)/usr/lib/tor-browser
 	cp tor-browser $(pkgdir)/usr/bin
 	chmod 755 $(pkgdir)/usr/bin/tor-browser
 
