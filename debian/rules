@@ -2,6 +2,13 @@
 
 pkgdir = debian/tor-browser
 
+
+# Gets the full version of the source package including debian version
+DEB_VERSION := $(shell dpkg-parsechangelog | egrep '^Version:' | cut -f 2 -d ' ')
+DEB_NOEPOCH_VERSION := $(shell echo $(DEB_VERSION) | cut -d: -f2-)
+# Gets only the upstream version of the package
+DEB_UPSTREAM_VERSION := $(shell echo $(DEB_NOEPOCH_VERSION) | sed 's/-[^-]*$$//' | awk -F+ '{print $$1}')
+
 build:
 	./fetch-tbb.sh $(DEB_UPSTREAM_VERSION) $(DEB_HOST_ARCH)
 	./prep-files.sh $(DEB_UPSTREAM_VERSION) $(DEB_HOST_ARCH)
