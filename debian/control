@@ -1,0 +1,20 @@
+Source: tor-browser
+Section: web
+Priority: optional
+Maintainer: Ivan J. <parazyd@dyne.org>
+Build-Depends:
+	debhelper (>= 9),
+	hunspell,
+	p7zip-full,
+	xz-utils,
+	wget,
+	gnupg
+Homepage: https://www.torproject.org/projects/torbrowser.html.en
+Vcs-Browser: https://github.com/headslive/tor-browser-bin
+Vcs-Git: https://github.com/headslive/tor-browser-bin.git
+
+Package: tor-browser
+Architecture: amd64 i386
+Provides: firefox-esr (>= 60)
+Conflicts: firefox-esr
+Description: Tor Browser binary package

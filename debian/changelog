@@ -1,0 +1,5 @@
+tor-browser (8.0.6) unstable; urgency=medium
+
+  * Initial packaging
+
+ -- Ivan J. <parazyd@dyne.org>  Tue, 12 Mar 2019 19:40:35 +0100
